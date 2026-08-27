@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     EDITE ESTAS DUAS LINHAS E MAIS NADA
+     1) BASE: o endereço onde esta página vai ficar hospedada,
+        SEM barra no final. Ex.: https://marcosgomes.github.io/braulio70
+     2) APP: a URL /exec do seu Apps Script
+     ============================================================ -->
+<script>
+  var BASE = 'https://SEU-USUARIO.github.io/SEU-REPOSITORIO';
+  var APP  = 'https://script.google.com/macros/s/COLE-A-SUA-AQUI/exec';
+</script>
+
+<title>70 anos de Braulio — Confirme sua presença</title>
+<meta name="description" content="18/10/2026, domingo, 11h — Ventura Recepções. Toque para confirmar sua presença.">
+
+<!-- Open Graph: é isto que o WhatsApp lê para montar a capa.
+     TROQUE "https://SEU-USUARIO.github.io/SEU-REPOSITORIO" nas 3 linhas abaixo
+     pelo mesmo endereço que você pôs em BASE. Precisa ser absoluto. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="70 anos de Braulio — Confirme sua presença">
+<meta property="og:description" content="18/10/2026, domingo, 11h — Ventura Recepções.">
+<meta property="og:image" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/og-capa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/">
+<meta property="og:site_name" content="70 anos de Braulio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/og-capa.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#14251A; --ink:#1E3524; --ink-soft:#4A6350;
+    --paper:#F4EFE2; --gold:#A8862F; --gold-soft:#D8C48D; --r:3px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(120% 60% at 50% 0%, #22412C 0%, var(--forest) 55%, #0F1C14 100%);
+    background-attachment:fixed;min-height:100vh;
+    font-family:'Karla',system-ui,sans-serif;color:var(--ink);
+    padding:18px 14px 40px;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:480px;margin:0 auto}
+  .convite{
+    display:block;width:100%;height:auto;border-radius:var(--r);
+    box-shadow:0 16px 44px rgba(0,0,0,.45);border:1px solid var(--gold-soft)
+  }
+  .cta{
+    display:block;width:100%;margin-top:18px;padding:17px 18px;text-align:center;
+    background:var(--paper);border:1px solid var(--gold);border-radius:var(--r);
+    color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;
+    letter-spacing:.12em;text-transform:uppercase;transition:.15s;
+    box-shadow:0 8px 24px rgba(0,0,0,.3)
+  }
+  .cta:hover{background:#fff;transform:translateY(-1px)}
+  .nota{
+    text-align:center;color:var(--gold-soft);font-size:12.5px;
+    letter-spacing:.06em;margin:14px 0 0;opacity:.85
+  }
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="sr">70 anos de Braulio — 18/10/2026, 11h, Ventura Recepções</h1>
+    <img class="convite" src="convite.jpg" alt="Convite: 70 anos de Braulio, 18 de outubro de 2026, 11h, Ventura Recepções">
+    <a class="cta" id="btn" href="#">Confirmar presença</a>
+    <p class="nota">Responda até 10/10/2026</p>
+  </div>
+
+<script>
+  (function(){
+    var g = new URLSearchParams(location.search).get('g') || '';
+    var destino = APP + (g ? ('?g=' + encodeURIComponent(g)) : '');
+    document.getElementById('btn').setAttribute('href', destino);
+  })();
+</script>
+</body>
+</html>
